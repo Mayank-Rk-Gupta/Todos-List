@@ -1,4 +1,5 @@
 import './App.css';
+import Fotter from './MyComponents/Fotter';
 import Header from './MyComponents/Header';
 import Todos from './MyComponents/Todos';
 
@@ -25,6 +26,7 @@ function App() {
     <>
       <Header title ="My Todos List"/>
       <Todos todos={todos}/>
+      <Fotter/>
       
     
     </>
