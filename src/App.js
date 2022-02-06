@@ -1,11 +1,18 @@
 import './App.css';
-import Fotter from './MyComponents/Fotter';
 import Header from './MyComponents/Header';
 import Todos from './MyComponents/Todos';
+import React, { useState } from 'react';
 
 
 function App() {
-   let todos = [
+   const onDelete = (todo)=>{
+     console.log("I am ondelete",todo);
+     setTodos(todos.filter((element)=>{
+       return element!== todo;
+     }))
+   }
+   
+   const [todos, setTodos] = useState([
      {
        SerialNo:1,
        title: "Learn Blockchain",
@@ -21,12 +28,12 @@ function App() {
        title: "Learn Solidity",
        description: "Solidity is a high level proggraming language In which the smart contract of Ethereum is writter"
      }
-   ];
+    ]);
   return(
     <>
       <Header title ="My Todos List"/>
-      <Todos todos={todos}/>
-      <Fotter/>
+      <Todos todos={todos} onDelete={onDelete}/>
+      
       
     
     </>
